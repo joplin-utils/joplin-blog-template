@@ -1,0 +1,14 @@
+#mark-magic.config.yaml
+tasks:
+  - name: blog
+    input:
+      name: '@mark-magic/plugin-joplin' # Input plug-in to read data from joplin notes
+      config:
+        baseUrl: 'http://localhost:27583' # The address of joplin web clipper service is usually http://localhost:41184. The demonstration here uses http://localhost:27583 during development.
+        token: '5bcfa49330788dd68efea27a0a133d2df24df68c3fd78731eaa9914ef34811a34a782233025ed8a651677ec303de6a04e54b57a27d48898ff043fd812d8e0b31' # jo Token of plin web clipper service
+        tag: blog # Filter notes based on tags
+    output:
+      name: '@mark-magic/plugin-hexo' # Output plug-in and generate files required by hexo
+      config:
+        path: './' # The root directory of the hexo project
+        base: /joplin-hexo-demo/ # Base during deployment
